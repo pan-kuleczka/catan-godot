@@ -1,19 +1,23 @@
 extends Control
 
+var map_scheme : MapScheme = MapScheme.MAP_SCHEMES["STANDARD_FOR_4"]
 var map : Map
 
 func _ready() -> void:
-	map = Map.new(MapScheme.MAP_SCHEMES["STANDARD_FOR_4"])
-	draw_board(map.tiles)
+	map = Map.new(map_scheme)
+	generate_board()
+	draw_board()
 
-func _process(delta : float) -> void:
+func _process(_delta : float) -> void:
 	pass
 
+func generate_board() -> void:
+	map.generate_map(map_scheme)
 
-func draw_board(tiles : Dictionary) -> void:
+func draw_board() -> void:
+	var tiles : Dictionary = map.tiles
 	$"Center/BoardLayer".clear()
 	$"Center/BoardNumbers".clear()
-	print(tiles)
 	for board_position : BoardPosition in tiles.keys():
 		var grid_layer_position : Vector2i = Vector2i(board_position.column, board_position.row)
 		var tile : BoardTile = tiles[board_position]
@@ -25,6 +29,12 @@ func draw_board(tiles : Dictionary) -> void:
 		)
 		$Center/BoardNumbers.set_cell(
 			grid_layer_position,
-			tile.number,
-			Vector2i(0, 0)
+			0,
+			Vector2i(0, 0),
+			tile.number
 		)
+
+
+func _on_generate_board_button_pressed() -> void:
+	generate_board()
+	draw_board()
