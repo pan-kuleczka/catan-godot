@@ -1,0 +1,56 @@
+[gd_resource type="TileSet" load_steps=15 format=3 uid="uid://6p61q7ei87p5"]
+
+[ext_resource type="Texture2D" uid="uid://n3xhk4kxebm2" path="res://assets/tiles/undefined.svg" id="1_jqmto"]
+[ext_resource type="Texture2D" uid="uid://405gt2csddt6" path="res://assets/tiles/brick_quarry.svg" id="2_ygg8q"]
+[ext_resource type="Texture2D" uid="uid://d3ijcut3u2k7f" path="res://assets/tiles/forest.svg" id="3_m46i2"]
+[ext_resource type="Texture2D" uid="uid://c8oapgxoilyhf" path="res://assets/tiles/pasture.svg" id="4_7aq8s"]
+[ext_resource type="Texture2D" uid="uid://dm6j1thntympy" path="res://assets/tiles/wheat_field.svg" id="5_owasf"]
+[ext_resource type="Texture2D" uid="uid://d0hjt5s86d7nt" path="res://assets/tiles/quarry.svg" id="6_y6872"]
+[ext_resource type="Texture2D" uid="uid://cf7pg7oxul6kg" path="res://assets/tiles/desert.svg" id="7_ke1fg"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eqgg8"]
+texture = ExtResource("1_jqmto")
+texture_region_size = Vector2i(196, 170)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n3rys"]
+texture = ExtResource("2_ygg8q")
+texture_region_size = Vector2i(196, 170)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjpq7"]
+texture = ExtResource("3_m46i2")
+texture_region_size = Vector2i(196, 170)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q5whe"]
+texture = ExtResource("4_7aq8s")
+texture_region_size = Vector2i(196, 170)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qjf83"]
+texture = ExtResource("5_owasf")
+texture_region_size = Vector2i(196, 170)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ptend"]
+texture = ExtResource("6_y6872")
+texture_region_size = Vector2i(196, 170)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4rjfx"]
+texture = ExtResource("7_ke1fg")
+texture_region_size = Vector2i(196, 170)
+0:0/0 = 0
+
+[resource]
+tile_shape = 3
+tile_offset_axis = 1
+tile_size = Vector2i(196, 170)
+sources/0 = SubResource("TileSetAtlasSource_eqgg8")
+sources/1 = SubResource("TileSetAtlasSource_n3rys")
+sources/2 = SubResource("TileSetAtlasSource_jjpq7")
+sources/3 = SubResource("TileSetAtlasSource_q5whe")
+sources/4 = SubResource("TileSetAtlasSource_qjf83")
+sources/5 = SubResource("TileSetAtlasSource_ptend")
+sources/6 = SubResource("TileSetAtlasSource_4rjfx")

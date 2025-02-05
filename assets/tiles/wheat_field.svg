@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="51.92880384mm"
+   height="45.108077833704826mm"
+   viewBox="0 0 51.92880384 45.108077833704826"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="wheat_field.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="3.3228296"
+     inkscape:cx="10.83414"
+     inkscape:cy="61.242983"
+     inkscape:window-width="2560"
+     inkscape:window-height="1351"
+     inkscape:window-x="2391"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <g
+     id="Body"
+     transform="translate(25.964402,22.554039) scale(1,-1)"
+     style="fill:#ffff00">
+    <path
+       id="Body_f0000"
+       d="M 12.727648000000004 22.04493299685241 L 25.455296 0.0 L 25.455296 0.0 L 12.727648000000004 22.044932996852406 L 12.727648000000004 22.044932996852406 Z "
+       stroke="#191919"
+       stroke-width="0.7 px"
+       style="stroke-width:0.7;stroke-miterlimit:4;stroke-dasharray:none;stroke-linecap:square;fill:#ffff00;fill-opacity:1;fill-rule:evenodd" />
+    <path
+       id="Body_f0001"
+       d="M -12.727647999999993 22.04493299685241 L 12.727648000000004 22.044932996852406 L 12.727648000000004 22.044932996852406 L -12.727647999999995 22.04493299685241 L -12.727647999999995 22.04493299685241 Z "
+       stroke="#191919"
+       stroke-width="0.7 px"
+       style="stroke-width:0.7;stroke-miterlimit:4;stroke-dasharray:none;stroke-linecap:square;fill:#ffff00;fill-opacity:1;fill-rule:evenodd" />
+    <path
+       id="Body_f0002"
+       d="M -25.455296000000004 0.0 L -12.727647999999995 22.04493299685241 L -12.727647999999995 22.04493299685241 L -25.455295999999997 3.3350441712388476e-15 L -25.455295999999997 3.3350441712388476e-15 Z "
+       stroke="#191919"
+       stroke-width="0.7 px"
+       style="stroke-width:0.7;stroke-miterlimit:4;stroke-dasharray:none;stroke-linecap:square;fill:#ffff00;fill-opacity:1;fill-rule:evenodd" />
+    <path
+       id="Body_f0003"
+       d="M -12.727648000000011 -22.044932996852403 L -25.455296 3.1173746767748423e-15 L -25.455295999999997 3.3350441712388476e-15 L -12.727648000000011 -22.044932996852403 L -12.727648000000011 -22.044932996852403 Z "
+       stroke="#191919"
+       stroke-width="0.7 px"
+       style="stroke-width:0.7;stroke-miterlimit:4;stroke-dasharray:none;stroke-linecap:square;fill:#ffff00;fill-opacity:1;fill-rule:evenodd" />
+    <path
+       id="Body_f0004"
+       d="M 12.727647999999983 -22.044932996852417 L -12.727648000000011 -22.044932996852403 L -12.727648000000011 -22.044932996852403 L 12.727647999999983 -22.044932996852417 L 12.727647999999983 -22.044932996852417 Z "
+       stroke="#191919"
+       stroke-width="0.7 px"
+       style="stroke-width:0.7;stroke-miterlimit:4;stroke-dasharray:none;stroke-linecap:square;fill:#ffff00;fill-opacity:1;fill-rule:evenodd" />
+    <path
+       id="Body_f0005"
+       d="M 25.455296 0.0 L 12.727647999999983 -22.044932996852417 L 12.727647999999983 -22.044932996852417 L 25.455296 0.0 L 25.455296 0.0 Z "
+       stroke="#191919"
+       stroke-width="0.7 px"
+       style="stroke-width:0.7;stroke-miterlimit:4;stroke-dasharray:none;stroke-linecap:square;fill:#ffff00;fill-opacity:1;fill-rule:evenodd" />
+    <path
+       id="Body_f0006"
+       d="M 12.727648000000004 22.044932996852406 L -12.727647999999995 22.04493299685241 L -25.455295999999997 3.3350441712388476e-15 L -12.727648000000011 -22.044932996852403 L 12.727647999999983 -22.044932996852417 L 25.455296 0.0 L 12.727648000000004 22.044932996852406 Z "
+       stroke="#191919"
+       stroke-width="0.7 px"
+       style="stroke-width:0.7;stroke-miterlimit:4;stroke-dasharray:none;stroke-linecap:square;fill:#ffff00;fill-opacity:1;fill-rule:evenodd" />
+    <path
+       id="Body_f0007"
+       d="M 25.455296 0.0 L 12.727648000000004 22.044932996852406 L -12.727647999999995 22.04493299685241 L -25.455295999999997 3.3350441712388476e-15 L -12.727648000000011 -22.044932996852403 L 12.727647999999983 -22.044932996852417 L 25.455296 0.0 Z "
+       stroke="#191919"
+       stroke-width="0.7 px"
+       style="stroke-width:0.7;stroke-miterlimit:4;stroke-dasharray:none;stroke-linecap:square;fill:#ffff00;fill-opacity:1;fill-rule:evenodd" />
+    <title
+       id="title1">b'Body'</title>
+  </g>
+</svg>
