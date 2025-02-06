@@ -22,16 +22,16 @@ func get_neighbors() -> Array[GridPosition]:
 			GridPosition.new(x, y + 1)
 		]
 
-func get_tile_neighbors() -> Array[BoardPosition]:
-	if y % 2 == 1:
-		return [
-			BoardPosition.new(x - 1, y / 2),
-			BoardPosition.new(x, y / 2),
-			BoardPosition.new(x, y / 2 + 1)
-		]
-	else:
-		return [
-			BoardPosition.new(x - 1, y / 2 - 1),
-			BoardPosition.new(x - 1, y / 2),
-			BoardPosition.new(x, y / 2)
-		]
+#func get_tile_neighbors() -> Array[BoardPosition]:
+	#if y % 2 == 1:
+		#return [
+			#BoardPosition.new(x - 1, y / 2),
+			#BoardPosition.new(x, y / 2),
+			#BoardPosition.new(x, y / 2 + 1)
+		#]
+	#else:
+		#return [
+			#BoardPosition.new(x - 1, y / 2 - 1),
+			#BoardPosition.new(x - 1, y / 2),
+			#BoardPosition.new(x, y / 2)
+		#]

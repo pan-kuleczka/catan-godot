@@ -18,17 +18,16 @@ func draw_board() -> void:
 	var tiles : Dictionary = map.tiles
 	$"Center/BoardLayer".clear()
 	$"Center/BoardNumbers".clear()
-	for board_position : BoardPosition in tiles.keys():
-		var grid_layer_position : Vector2i = Vector2i(board_position.column, board_position.row)
+	for board_position : Vector2i in tiles.keys():
 		var tile : BoardTile = tiles[board_position]
 		$"Center/BoardLayer".set_cell(
-			grid_layer_position,
+			board_position,
 			tile.type,
 			Vector2i(0, 0)
 			
 		)
 		$Center/BoardNumbers.set_cell(
-			grid_layer_position,
+			board_position,
 			0,
 			Vector2i(0, 0),
 			tile.number
