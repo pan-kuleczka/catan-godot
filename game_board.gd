@@ -33,7 +33,6 @@ func draw_board() -> void:
 			tile.number
 		)
 
-
 func _on_generate_board_button_pressed() -> void:
 	generate_board()
 	draw_board()

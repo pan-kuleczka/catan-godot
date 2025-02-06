@@ -26,11 +26,11 @@ func get_neighbors() -> Array[Vector2i]:
 				position,
 				MapScheme.get_tile_map_layer().get_neighbor_cell(
 					position,
-					TileSet.CELL_NEIGHBOR_BOTTOM_LEFT_CORNER
+					TileSet.CELL_NEIGHBOR_BOTTOM_LEFT_SIDE
 				),
 				MapScheme.get_tile_map_layer().get_neighbor_cell(
 					position,
-					TileSet.CELL_NEIGHBOR_TOP_LEFT_CORNER
+					TileSet.CELL_NEIGHBOR_TOP_LEFT_SIDE
 				)
 			]
 		VertexDir.RIGHT:
@@ -38,11 +38,11 @@ func get_neighbors() -> Array[Vector2i]:
 				position,
 				MapScheme.get_tile_map_layer().get_neighbor_cell(
 					position,
-					TileSet.CELL_NEIGHBOR_BOTTOM_RIGHT_CORNER
+					TileSet.CELL_NEIGHBOR_BOTTOM_RIGHT_SIDE
 				),
 				MapScheme.get_tile_map_layer().get_neighbor_cell(
 					position,
-					TileSet.CELL_NEIGHBOR_TOP_RIGHT_CORNER
+					TileSet.CELL_NEIGHBOR_TOP_RIGHT_SIDE
 				)
 			]
 		_:
