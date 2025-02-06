@@ -1,10 +1,10 @@
 extends Control
 
 var map_scheme : MapScheme = MapScheme.MAP_SCHEMES["STANDARD_FOR_4"]
-var map : Map
+var map : GameMap
 
 func _ready() -> void:
-	map = Map.new(map_scheme)
+	map = GameMap.new(map_scheme)
 	generate_board()
 	draw_board()
 
@@ -19,7 +19,7 @@ func draw_board() -> void:
 	$"Center/BoardLayer".clear()
 	$"Center/BoardNumbers".clear()
 	for board_position : Vector2i in tiles.keys():
-		var tile : BoardTile = tiles[board_position]
+		var tile : MapTile = tiles[board_position]
 		$"Center/BoardLayer".set_cell(
 			board_position,
 			tile.type,

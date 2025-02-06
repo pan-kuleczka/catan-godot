@@ -1,7 +1,7 @@
-class_name BoardTile
+class_name MapTile
 extends Resource
 
-enum BoardTileType {
+enum MapTileType {
 	EMPTY = -1,
 	UNDEFINED = 0,
 	BRICK_QUARRY = 1,
@@ -12,9 +12,9 @@ enum BoardTileType {
 	DESERT = 6,
 }
 
-var type : BoardTileType
+var type : MapTileType
 var number : int
 
-func _init(_type : BoardTileType, _number : int = 0) -> void:
+func _init(_type : MapTileType, _number : int = 0) -> void:
 	type = _type
 	number = _number

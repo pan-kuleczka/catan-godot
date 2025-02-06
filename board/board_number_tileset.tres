@@ -1,0 +1,37 @@
+[gd_resource type="TileSet" load_steps=15 format=3 uid="uid://cgxiyq141lyol"]
+
+[ext_resource type="PackedScene" uid="uid://dk4isqdgjy0nx" path="res://assets/tile_numbers/0.tscn" id="1_m6by8"]
+[ext_resource type="PackedScene" uid="uid://bre8k7o606lmy" path="res://assets/tile_numbers/1.tscn" id="2_3gar6"]
+[ext_resource type="PackedScene" uid="uid://bw75i217qyq6n" path="res://assets/tile_numbers/10.tscn" id="3_8idby"]
+[ext_resource type="PackedScene" uid="uid://dixkshg4yr0gk" path="res://assets/tile_numbers/2.tscn" id="3_guxxg"]
+[ext_resource type="PackedScene" uid="uid://slcat6kffjaa" path="res://assets/tile_numbers/3.tscn" id="4_htvpo"]
+[ext_resource type="PackedScene" uid="uid://bxrh4ab6l2to5" path="res://assets/tile_numbers/11.tscn" id="4_q7gk8"]
+[ext_resource type="PackedScene" uid="uid://dhjxew6oeplpa" path="res://assets/tile_numbers/4.tscn" id="5_2jesf"]
+[ext_resource type="PackedScene" uid="uid://cemkaio6gi3ft" path="res://assets/tile_numbers/12.tscn" id="5_fmyec"]
+[ext_resource type="PackedScene" uid="uid://b5gb31ei186xs" path="res://assets/tile_numbers/5.tscn" id="6_uydb1"]
+[ext_resource type="PackedScene" uid="uid://plmaxw4rf5lu" path="res://assets/tile_numbers/6.tscn" id="7_mbkoa"]
+[ext_resource type="PackedScene" uid="uid://pdt40rlm2p2p" path="res://assets/tile_numbers/7.tscn" id="11_840wf"]
+[ext_resource type="PackedScene" uid="uid://bvuvlsl353udv" path="res://assets/tile_numbers/8.tscn" id="12_ijuh5"]
+[ext_resource type="PackedScene" uid="uid://bkmfudlalusud" path="res://assets/tile_numbers/9.tscn" id="13_xjvqo"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_b3sl4"]
+scenes/0/scene = ExtResource("1_m6by8")
+scenes/1/scene = ExtResource("2_3gar6")
+scenes/2/scene = ExtResource("3_guxxg")
+scenes/3/scene = ExtResource("4_htvpo")
+scenes/4/scene = ExtResource("5_2jesf")
+scenes/5/scene = ExtResource("6_uydb1")
+scenes/6/scene = ExtResource("7_mbkoa")
+scenes/7/scene = ExtResource("11_840wf")
+scenes/8/scene = ExtResource("12_ijuh5")
+scenes/9/scene = ExtResource("13_xjvqo")
+scenes/10/scene = ExtResource("3_8idby")
+scenes/11/scene = ExtResource("4_q7gk8")
+scenes/12/scene = ExtResource("5_fmyec")
+
+[resource]
+tile_shape = 3
+tile_layout = 4
+tile_offset_axis = 1
+tile_size = Vector2i(196, 170)
+sources/0 = SubResource("TileSetScenesCollectionSource_b3sl4")

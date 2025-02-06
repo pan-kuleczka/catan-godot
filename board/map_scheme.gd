@@ -4,7 +4,7 @@ extends Resource
 enum MapSchemeTileType {LAND, OCEAN}
 
 var map_scheme_tiles : Dictionary
-var land_tile_types : Array[BoardTile.BoardTileType]
+var land_tile_types : Array[MapTile.MapTileType]
 var land_tile_numbers : Array[int]
 var port_positions : Array[EdgePosition]
 
@@ -19,14 +19,14 @@ static func get_tile_map_layer() -> TileMapLayer:
 
 func _init(
 		_map_scheme_tiles : Dictionary,
-		_land_tile_types : Array[BoardTile.BoardTileType],
+		_land_tile_types : Array[MapTile.MapTileType],
 		_land_tile_numbers : Array[int],
 		_port_positions : Array[EdgePosition]
 		) -> void:
 	if len(_land_tile_numbers) > len(_land_tile_types):
 		push_warning("MapScheme _init: len(_land_tile_numbers) > len(_land_tile_types)")
 	while len(_land_tile_numbers) > len(_land_tile_types):
-		_land_tile_types.append(BoardTile.BoardTileType.EMPTY)
+		_land_tile_types.append(MapTile.MapTileType.EMPTY)
 		
 	map_scheme_tiles = _map_scheme_tiles
 	land_tile_types = _land_tile_types
@@ -36,7 +36,7 @@ func _init(
 static func _generate_map_scheme_tiles(max_land_dist : int):
 	var generated_map_scheme_tiles : Dictionary = {}
 	
-	# Assuming the board_tile_set.tres settings, that is
+	# Assuming the Map_tile_set.tres settings, that is
 	# 1. A hexagonal TileMap
 	# 2. Diamond right Layout
 	
@@ -62,12 +62,12 @@ static var MAP_SCHEMES : Dictionary = {
 	"STANDARD_FOR_4" : MapScheme.new(
 		_generate_map_scheme_tiles(2),		
 		[
-			BoardTile.BoardTileType.BRICK_QUARRY, BoardTile.BoardTileType.BRICK_QUARRY, BoardTile.BoardTileType.BRICK_QUARRY,
-			BoardTile.BoardTileType.FOREST, BoardTile.BoardTileType.FOREST, BoardTile.BoardTileType.FOREST, BoardTile.BoardTileType.FOREST,
-			BoardTile.BoardTileType.PASTURE, BoardTile.BoardTileType.PASTURE, BoardTile.BoardTileType.PASTURE, BoardTile.BoardTileType.PASTURE,
-			BoardTile.BoardTileType.WHEAT_FIELD, BoardTile.BoardTileType.WHEAT_FIELD, BoardTile.BoardTileType.WHEAT_FIELD, BoardTile.BoardTileType.WHEAT_FIELD,
-			BoardTile.BoardTileType.QUARRY, BoardTile.BoardTileType.QUARRY, BoardTile.BoardTileType.QUARRY,
-			BoardTile.BoardTileType.DESERT
+			MapTile.MapTileType.BRICK_QUARRY, MapTile.MapTileType.BRICK_QUARRY, MapTile.MapTileType.BRICK_QUARRY,
+			MapTile.MapTileType.FOREST, MapTile.MapTileType.FOREST, MapTile.MapTileType.FOREST, MapTile.MapTileType.FOREST,
+			MapTile.MapTileType.PASTURE, MapTile.MapTileType.PASTURE, MapTile.MapTileType.PASTURE, MapTile.MapTileType.PASTURE,
+			MapTile.MapTileType.WHEAT_FIELD, MapTile.MapTileType.WHEAT_FIELD, MapTile.MapTileType.WHEAT_FIELD, MapTile.MapTileType.WHEAT_FIELD,
+			MapTile.MapTileType.QUARRY, MapTile.MapTileType.QUARRY, MapTile.MapTileType.QUARRY,
+			MapTile.MapTileType.DESERT
 		],
 		
 		[2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12],

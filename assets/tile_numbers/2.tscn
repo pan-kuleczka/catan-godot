@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://slcat6kffjaa"]
+[gd_scene load_steps=2 format=3 uid="uid://dixkshg4yr0gk"]
 
-[ext_resource type="LabelSettings" uid="uid://c8v3qd60cgwlc" path="res://board_number_label_settings.tres" id="1_ggqe1"]
+[ext_resource type="LabelSettings" uid="uid://c8v3qd60cgwlc" path="res://board/board_number_label_settings.tres" id="1_dbguc"]
 
-[node name="3" type="Control"]
+[node name="2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,8 +17,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "3"
-label_settings = ExtResource("1_ggqe1")
+text = "2"
+label_settings = ExtResource("1_dbguc")
 horizontal_alignment = 1
 vertical_alignment = 1
 justification_flags = 171

@@ -1,4 +1,4 @@
-class_name Map
+class_name GameMap
 extends Resource
 	
 var tiles : Dictionary
@@ -13,7 +13,7 @@ func _init(_map_scheme : MapScheme) -> void:
 
 func generate_map(map_scheme : MapScheme) -> Dictionary:
 	var scheme : Dictionary = map_scheme.map_scheme_tiles
-	var types : Array[BoardTile.BoardTileType] = map_scheme.land_tile_types
+	var types : Array[MapTile.MapTileType] = map_scheme.land_tile_types
 	var numbers : Array[int] = map_scheme.land_tile_numbers
 	types.shuffle()
 	numbers.shuffle()
@@ -24,20 +24,20 @@ func generate_map(map_scheme : MapScheme) -> Dictionary:
 			if current_type_index >= len(types):
 				push_warning("generate_map warning: not enough tile types to fill the map")
 				continue
-			if types[current_type_index] == BoardTile.BoardTileType.DESERT:
+			if types[current_type_index] == MapTile.MapTileType.DESERT:
 				robber_position = board_position
-				tiles[board_position] = BoardTile.new(types[current_type_index])
+				tiles[board_position] = MapTile.new(types[current_type_index])
 				current_type_index += 1
 				continue
 			if current_number_index >= len(numbers):
 				push_warning("generate_map warning: not enough tile numbers to fill the map")
 				continue
-			tiles[board_position] = BoardTile.new(types[current_type_index], numbers[current_number_index])
+			tiles[board_position] = MapTile.new(types[current_type_index], numbers[current_number_index])
 			current_type_index += 1
 			current_number_index += 1
 	return tiles
 
-func get_tile_type(board_position : Vector2i) -> BoardTile.BoardTileType:
+func get_tile_type(board_position : Vector2i) -> MapTile.MapTileType:
 	return tiles[board_position].tile_type
 
 func get_number(board_position : Vector2i) -> int:
