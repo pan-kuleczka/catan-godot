@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=4 uid="uid://b2xco2tpsue3"]
+[gd_scene load_steps=4 format=3 uid="uid://b2xco2tpsue3"]
 
 [ext_resource type="TileSet" uid="uid://6p61q7ei87p5" path="res://board_tile_set.tres" id="1_5o8c3"]
 [ext_resource type="Script" path="res://game_board.gd" id="1_ae2mq"]
@@ -25,12 +25,10 @@ grow_vertical = 2
 
 [node name="BoardLayer" type="TileMapLayer" parent="Center"]
 position = Vector2(-98, -85)
-tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAAAAAAAAAAAAAABAP//AAAAAAAAAAAAAP//AAAAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAABAP7/AAAAAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAA=")
 tile_set = ExtResource("1_5o8c3")
 
 [node name="BoardNumbers" type="TileMapLayer" parent="Center"]
 position = Vector2(-98, -85)
-tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAAAAAAAAAAAAAABAP//AAAAAAAAAAAAAP//AAAAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAABAP7/AAAAAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAA=")
 tile_set = ExtResource("3_x45df")
 
 [node name="Button" type="Button" parent="."]

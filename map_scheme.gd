@@ -8,6 +8,15 @@ var land_tile_types : Array[BoardTile.BoardTileType]
 var land_tile_numbers : Array[int]
 var port_positions : Array[EdgePosition]
 
+static func get_tile_map_layer() -> TileMapLayer:
+	var tile_set : TileSet = TileSet.new()
+	tile_set.tile_shape = TileSet.TILE_SHAPE_HEXAGON
+	tile_set.tile_layout = tile_set.TileLayout.TILE_LAYOUT_DIAMOND_RIGHT
+	tile_set.tile_offset_axis = TileSet.TILE_OFFSET_AXIS_VERTICAL
+	var tile_map_layer : TileMapLayer = TileMapLayer.new()
+	tile_map_layer.tile_set = tile_set
+	return tile_map_layer
+
 func _init(
 		_map_scheme_tiles : Dictionary,
 		_land_tile_types : Array[BoardTile.BoardTileType],
@@ -24,34 +33,29 @@ func _init(
 	land_tile_numbers = _land_tile_numbers
 	port_positions = _port_positions
 
-static func _generate_map_scheme_tiles(max_dist : int):
-	var map_scheme_tiles : Dictionary = {}
+static func _generate_map_scheme_tiles(max_land_dist : int):
+	var generated_map_scheme_tiles : Dictionary = {}
 	
 	# Assuming the board_tile_set.tres settings, that is
 	# 1. A hexagonal TileMap
-	# 2. Stacked tile Layout
-	var tile_set : TileSet = TileSet.new()
-	tile_set.tile_shape = TileSet.TILE_SHAPE_HEXAGON
-	tile_set.tile_layout = tile_set.TileLayout.TILE_LAYOUT_STACKED
-	tile_set.tile_offset_axis = TileSet.TILE_OFFSET_AXIS_VERTICAL
-	var tile_map_layer : TileMapLayer = TileMapLayer.new()
-	tile_map_layer.tile_set = tile_set
+	# 2. Diamond right Layout
+	
 	
 	var current_tiles : Set = Set.new({Vector2i(0, 0) : null})
 	var next_tiles : Set = Set.new()
 	
-	for i in range(max_dist):
+	for i in range(max_land_dist):
 		next_tiles.clear()
 		for tile in current_tiles.get_elems():
-			for neighbor in tile_map_layer.get_surrounding_cells(tile):
+			for neighbor in get_tile_map_layer().get_surrounding_cells(tile):
 				next_tiles.insert(neighbor)
 			next_tiles.insert(tile)
 		current_tiles = next_tiles
 		next_tiles = Set.new()
 		
 	for tile in current_tiles.get_elems():
-		map_scheme_tiles[tile] = MapSchemeTileType.LAND
-	return map_scheme_tiles
+		generated_map_scheme_tiles[tile] = MapSchemeTileType.LAND
+	return generated_map_scheme_tiles
 			
 
 static var MAP_SCHEMES : Dictionary = {

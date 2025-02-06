@@ -15,7 +15,6 @@ func generate_map(map_scheme : MapScheme) -> Dictionary:
 	var scheme : Dictionary = map_scheme.map_scheme_tiles
 	var types : Array[BoardTile.BoardTileType] = map_scheme.land_tile_types
 	var numbers : Array[int] = map_scheme.land_tile_numbers
-	var map_scheme_tiles : Dictionary
 	types.shuffle()
 	numbers.shuffle()
 	var current_type_index : int = 0
