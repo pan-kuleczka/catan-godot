@@ -12,15 +12,16 @@ func _init(_map_scheme : MapScheme) -> void:
 	#return "\n".join([" ".join([str(tile) for tile in row]) for row in tiles])
 
 func generate_map(map_scheme : MapScheme) -> Dictionary:
-	var scheme = map_scheme.map_scheme
-	var types = map_scheme.land_tile_types
-	var numbers = map_scheme.land_tile_numbers
+	var scheme : Dictionary = map_scheme.map_scheme_tiles
+	var types : Array[BoardTile.BoardTileType] = map_scheme.land_tile_types
+	var numbers : Array[int] = map_scheme.land_tile_numbers
+	var map_scheme_tiles : Dictionary
 	types.shuffle()
 	numbers.shuffle()
 	var current_type_index : int = 0
 	var current_number_index : int = 0
 	for board_position in scheme.keys():
-		if scheme[board_position]== MapScheme.MapSchemeTileType.LAND:
+		if scheme[board_position] == MapScheme.MapSchemeTileType.LAND:
 			if current_type_index >= len(types):
 				push_warning("generate_map warning: not enough tile types to fill the map")
 				continue

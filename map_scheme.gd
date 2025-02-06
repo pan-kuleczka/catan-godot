@@ -3,13 +3,13 @@ extends Resource
 
 enum MapSchemeTileType {LAND, OCEAN}
 
-var map_scheme : Dictionary
+var map_scheme_tiles : Dictionary
 var land_tile_types : Array[BoardTile.BoardTileType]
 var land_tile_numbers : Array[int]
 var port_positions : Array[EdgePosition]
 
 func _init(
-		_map_scheme : Dictionary,
+		_map_scheme_tiles : Dictionary,
 		_land_tile_types : Array[BoardTile.BoardTileType],
 		_land_tile_numbers : Array[int],
 		_port_positions : Array[EdgePosition]
@@ -19,35 +19,44 @@ func _init(
 	while len(_land_tile_numbers) > len(_land_tile_types):
 		_land_tile_types.append(BoardTile.BoardTileType.EMPTY)
 		
-	map_scheme = _map_scheme
+	map_scheme_tiles = _map_scheme_tiles
 	land_tile_types = _land_tile_types
 	land_tile_numbers = _land_tile_numbers
 	port_positions = _port_positions
 
+static func _generate_map_scheme_tiles(max_dist : int):
+	var map_scheme_tiles : Dictionary = {}
+	
+	# Assuming the board_tile_set.tres settings, that is
+	# 1. A hexagonal TileMap
+	# 2. Stacked tile Layout
+	var tile_set : TileSet = TileSet.new()
+	tile_set.tile_shape = TileSet.TILE_SHAPE_HEXAGON
+	tile_set.tile_layout = tile_set.TileLayout.TILE_LAYOUT_STACKED
+	tile_set.tile_offset_axis = TileSet.TILE_OFFSET_AXIS_VERTICAL
+	var tile_map_layer : TileMapLayer = TileMapLayer.new()
+	tile_map_layer.tile_set = tile_set
+	
+	var current_tiles : Set = Set.new({Vector2i(0, 0) : null})
+	var next_tiles : Set = Set.new()
+	
+	for i in range(max_dist):
+		next_tiles.clear()
+		for tile in current_tiles.get_elems():
+			for neighbor in tile_map_layer.get_surrounding_cells(tile):
+				next_tiles.insert(neighbor)
+			next_tiles.insert(tile)
+		current_tiles = next_tiles
+		next_tiles = Set.new()
+		
+	for tile in current_tiles.get_elems():
+		map_scheme_tiles[tile] = MapSchemeTileType.LAND
+	return map_scheme_tiles
+			
+
 static var MAP_SCHEMES : Dictionary = {
 	"STANDARD_FOR_4" : MapScheme.new(
-		{
-			Vector2i(-2, -1) : MapSchemeTileType.LAND,
-			Vector2i(-2, 0) : MapSchemeTileType.LAND,
-			Vector2i(-2, 1) : MapSchemeTileType.LAND,
-			Vector2i(-1, -2) : MapSchemeTileType.LAND,
-			Vector2i(-1, -1) : MapSchemeTileType.LAND,
-			Vector2i(-1, 0) : MapSchemeTileType.LAND,
-			Vector2i(-1, 1) : MapSchemeTileType.LAND,
-			Vector2i(-1, 2) : MapSchemeTileType.LAND,
-			Vector2i(0, -2) : MapSchemeTileType.LAND,
-			Vector2i(0, -1) : MapSchemeTileType.LAND,
-			Vector2i(0, 0) : MapSchemeTileType.LAND,
-			Vector2i(0, 1) : MapSchemeTileType.LAND,
-			Vector2i(0, 2) : MapSchemeTileType.LAND,
-			Vector2i(1, -2) : MapSchemeTileType.LAND,
-			Vector2i(1, -1) : MapSchemeTileType.LAND,
-			Vector2i(1, 0) : MapSchemeTileType.LAND,
-			Vector2i(1, 1) : MapSchemeTileType.LAND,
-			Vector2i(1, 2) : MapSchemeTileType.LAND,
-			Vector2i(2, 0) : MapSchemeTileType.LAND,
-		},
-		
+		_generate_map_scheme_tiles(2),		
 		[
 			BoardTile.BoardTileType.BRICK_QUARRY, BoardTile.BoardTileType.BRICK_QUARRY, BoardTile.BoardTileType.BRICK_QUARRY,
 			BoardTile.BoardTileType.FOREST, BoardTile.BoardTileType.FOREST, BoardTile.BoardTileType.FOREST, BoardTile.BoardTileType.FOREST,
