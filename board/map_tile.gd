@@ -24,11 +24,11 @@ func get_associated_resource() -> int:
 		MapTileType.BRICK_QUARRY:
 			return GameResource.BRICK
 		MapTileType.FOREST:
-			return GameResource.WOOD
+			return GameResource.LUMBER
 		MapTileType.PASTURE:
 			return GameResource.WOOL
 		MapTileType.WHEAT_FIELD:
-			return GameResource.WHEAT
+			return GameResource.GRAIN
 		MapTileType.QUARRY:
 			return GameResource.ORE
 		_:

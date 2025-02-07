@@ -1,10 +1,10 @@
 class_name GameResource
 enum {
 	NONE,
-	WOOD,
+	LUMBER,
 	BRICK,
 	WOOL,
-	WHEAT,
+	GRAIN,
 	ORE,
 	CLOTH,
 	COIN,
