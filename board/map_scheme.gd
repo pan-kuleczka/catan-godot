@@ -3,13 +3,13 @@ extends Resource
 
 enum MapSchemeTileType {LAND, OCEAN}
 
-var map_scheme_tiles : Dictionary
+var map_scheme_tiles : UnorderedMap
 var land_tile_types : Array[MapTile.MapTileType]
 var land_tile_numbers : Array[int]
 var port_positions : Array[EdgePosition]
 
 func _init(
-		_map_scheme_tiles : Dictionary,
+		_map_scheme_tiles : UnorderedMap,
 		_land_tile_types : Array[MapTile.MapTileType],
 		_land_tile_numbers : Array[int],
 		_port_positions : Array[EdgePosition]
@@ -24,8 +24,8 @@ func _init(
 	land_tile_numbers = _land_tile_numbers
 	port_positions = _port_positions
 
-static func _generate_map_scheme_tiles(max_land_dist : int):
-	var generated_map_scheme_tiles : Dictionary = {}
+static func _generate_map_scheme_tiles(max_land_dist : int) -> UnorderedMap:
+	var generated_map_scheme_tiles : UnorderedMap = UnorderedMap.new()
 	
 	var current_tiles : UnorderedSet = UnorderedSet.new([TilePosition.new(0, 0)])
 	var next_tiles : UnorderedSet = UnorderedSet.new()
@@ -40,7 +40,7 @@ static func _generate_map_scheme_tiles(max_land_dist : int):
 		next_tiles = UnorderedSet.new()
 		
 	for tile_position in current_tiles.get_elems():
-		generated_map_scheme_tiles[tile_position] = MapSchemeTileType.LAND
+		generated_map_scheme_tiles.set_value(tile_position, MapSchemeTileType.LAND)
 
 	return generated_map_scheme_tiles
 			

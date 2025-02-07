@@ -15,14 +15,12 @@ func generate_board() -> void:
 	map.generate_map(map_scheme)
 
 func draw_board() -> void:
-	var tiles : Dictionary = map.tiles
 	$"Center/BoardLayer".clear()
 	$"Center/BoardNumbers".clear()
-	for tile_position : TilePosition in tiles.keys():
-		var tile : MapTile = tiles[tile_position]
+	for tile_position : TilePosition in map.get_existing_tile_positions():
 		$"Center/BoardLayer".set_cell(
 			tile_position.to_vec2i(),
-			tile.type,
+			map.get_tile_type(tile_position),
 			Vector2i(0, 0)
 			
 		)
@@ -30,7 +28,7 @@ func draw_board() -> void:
 			tile_position.to_vec2i(),
 			0,
 			Vector2i(0, 0),
-			tile.number
+			map.get_tile_number(tile_position)
 		)
 
 func _on_generate_board_button_pressed() -> void:

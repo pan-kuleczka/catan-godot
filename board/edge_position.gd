@@ -20,6 +20,14 @@ func _init(_tile_position : TilePosition = TilePosition.new(0, 0), _direction : 
 	tile_position = _tile_position
 	direction = _direction
 
+func _hash() -> int:
+	return hash([tile_position, direction])
+
+func _eq(other : Variant) -> bool:
+	if other.get_class() != self.get_class():
+		return false
+	return [tile_position, direction] == [other.tile_position, other.direction]
+	
 func get_neighbor_tiles() -> Array[TilePosition]:
 	match direction:
 		EdgeDir.TOP_LEFT:

@@ -19,7 +19,7 @@ func set_value(key : Variant, value : Variant) -> void:
 			dictionary[key_hash][i][1] = value
 			return
 	dictionary[key_hash].append([key, value])
-	
+
 func get_value(key : Variant) -> Variant:
 	var key_hash : int = key._hash()
 	for i in range(len(dictionary[key_hash])):
