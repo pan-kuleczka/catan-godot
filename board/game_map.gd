@@ -2,14 +2,13 @@ class_name GameMap
 extends Resource
 	
 var tiles : Dictionary
-var robber_position : Vector2i
-var pirate_position : Vector2i
+var robber_position : TilePosition
+var pirate_position : TilePosition
 
 func _init(_map_scheme : MapScheme) -> void:
 	tiles = generate_map(_map_scheme)
-
-#def __str__(self) -> str:
-	#return "\n".join([" ".join([str(tile) for tile in row]) for row in tiles])
+	robber_position = null
+	pirate_position = null
 
 func generate_map(map_scheme : MapScheme) -> Dictionary:
 	var scheme : Dictionary = map_scheme.map_scheme_tiles
@@ -37,8 +36,8 @@ func generate_map(map_scheme : MapScheme) -> Dictionary:
 			current_number_index += 1
 	return tiles
 
-func get_tile_type(board_position : Vector2i) -> MapTile.MapTileType:
-	return tiles[board_position].tile_type
+func get_tile_type(tile_position : TilePosition) -> MapTile.MapTileType:
+	return tiles[tile_position].tile_type
 
-func get_number(board_position : Vector2i) -> int:
-	return tiles[board_position].number
+func get_number(tile_position : TilePosition) -> int:
+	return tiles[tile_position].number

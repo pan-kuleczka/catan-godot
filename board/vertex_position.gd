@@ -12,38 +12,26 @@ enum VertexDir
 	RIGHT
 }
 
-var position : Vector2i
+var tile_position : TilePosition
 var direction : VertexDir
 
-func _init(_position : Vector2i = Vector2i(0, 0), _direction : VertexDir = VertexDir.LEFT):
-	position = _position
+func _init(_tile_position : TilePosition = TilePosition.new(0, 0), _direction : VertexDir = VertexDir.LEFT):
+	tile_position = _tile_position
 	direction = _direction
 
-func get_neighbors() -> Array[Vector2i]:
+func get_neighbor_tiles() -> Array[TilePosition]:
 	match direction:
 		VertexDir.LEFT:
 			return [
-				position,
-				MapScheme.get_tile_map_layer().get_neighbor_cell(
-					position,
-					TileSet.CELL_NEIGHBOR_BOTTOM_LEFT_SIDE
-				),
-				MapScheme.get_tile_map_layer().get_neighbor_cell(
-					position,
-					TileSet.CELL_NEIGHBOR_TOP_LEFT_SIDE
-				)
+				tile_position,
+				tile_position.get_neighbor(TilePosition.TileNeighbor.BOTTOM_LEFT),
+				tile_position.get_neighbor(TilePosition.TileNeighbor.TOP_LEFT)
 			]
 		VertexDir.RIGHT:
 			return [
-				position,
-				MapScheme.get_tile_map_layer().get_neighbor_cell(
-					position,
-					TileSet.CELL_NEIGHBOR_BOTTOM_RIGHT_SIDE
-				),
-				MapScheme.get_tile_map_layer().get_neighbor_cell(
-					position,
-					TileSet.CELL_NEIGHBOR_TOP_RIGHT_SIDE
-				)
+				tile_position,
+				tile_position.get_neighbor(TilePosition.TileNeighbor.BOTTOM_RIGHT),
+				tile_position.get_neighbor(TilePosition.TileNeighbor.TOP_RIGHT)
 			]
 		_:
 			return []
