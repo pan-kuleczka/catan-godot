@@ -1,5 +1,6 @@
 class_name GameResource
 enum {
+	NONE,
 	WOOD,
 	BRICK,
 	WOOL,
