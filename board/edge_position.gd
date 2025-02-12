@@ -1,5 +1,5 @@
 class_name EdgePosition
-extends Resource
+extends BoardPosition
 
 # I will use the following assumptions:
 # 1.	An 'edge position' is an edge of the game board
@@ -27,6 +27,9 @@ func _eq(other : Variant) -> bool:
 	if other.get_class() != self.get_class():
 		return false
 	return [tile_position, direction] == [other.tile_position, other.direction]
+
+func _to_string() -> String:
+	return "[" + tile_position._to_string() + ", " + str(direction) + "]"
 	
 func get_neighbor_tiles() -> Array[TilePosition]:
 	match direction:

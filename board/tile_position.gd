@@ -1,5 +1,5 @@
 class_name TilePosition
-extends Resource
+extends BoardPosition
 
 # Basically a Vector2i upgrade
 enum TileNeighbor
@@ -25,6 +25,9 @@ func _eq(other : Variant) -> bool:
 		return false
 	return position == other.position
 
+func _to_string() -> String:
+	return str(position)
+	
 static func from_vec2i(v : Vector2i) -> TilePosition:
 	return TilePosition.new(v.x, v.y)
 

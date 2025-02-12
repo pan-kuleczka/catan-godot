@@ -8,6 +8,7 @@ var pirate_position : TilePosition
 
 func _init(_map_scheme : MapScheme) -> void:
 	tiles = generate_map(_map_scheme)
+	building_positions = UnorderedMap.new()
 	robber_position = null
 	pirate_position = null
 

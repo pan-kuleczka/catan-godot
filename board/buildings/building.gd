@@ -13,8 +13,9 @@ var player_color : int
 func _init(_player_color : int) -> void:
 	player_color = _player_color
 
-static func get_texture():
-	push_error("The function get_texture() has not been overriden in a subclass of Building")
+static func get_node() -> Node2D:
+	push_error("The function get_node() has not been overriden in a subclass of Building")
+	return Node.new()
 
 static func get_cost() -> Dictionary:
 	push_error("The function get_cost() has not been overriden in a subclass of Building")
