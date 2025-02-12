@@ -18,7 +18,7 @@ func get_resources_count() -> Dictionary:
 func can_remove_resources(resources_removed : Dictionary) -> bool:
 	var resources_in_inventory : Dictionary = get_resources_count()
 	for resource : int in resources_removed.keys():
-		if resources_removed[resource] < 1:
+		if resources_removed[resource] <= 0:
 			continue
 		if not resources_in_inventory.has(resource):
 			return false

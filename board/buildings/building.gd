@@ -23,3 +23,6 @@ static func get_cost() -> Dictionary:
 static func get_positioning_type() -> BuildingPositioningType:
 	push_error("The function get_cost() has not been overriden in a subclass of Building")
 	return BuildingPositioningType.TILE
+
+static func get_prerequisite_building() -> Type:
+	return Type.any_type()
