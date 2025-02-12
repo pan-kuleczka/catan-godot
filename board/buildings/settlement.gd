@@ -11,3 +11,6 @@ static func get_cost() -> Dictionary:
 		GameResource.GRAIN : 1,
 		GameResource.WOOL : 1
 	}
+	
+static func get_tile_triggered_resources_received_multiplier() -> int:
+	return 1

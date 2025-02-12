@@ -47,3 +47,23 @@ func get_neighbor_tiles() -> Array[TilePosition]:
 			]
 		_:
 			return []
+			
+func get_endpoints() -> Array[VertexPosition]:
+	match direction:
+		EdgeDir.TOP_LEFT:
+			return [
+				VertexPosition.new(tile_position, VertexPosition.VertexDir.LEFT),
+				VertexPosition.new(tile_position.get_neighbor(TilePosition.TileNeighbor.TOP_LEFT), VertexPosition.VertexDir.RIGHT)
+			]
+		EdgeDir.TOP:
+			return [
+				VertexPosition.new(tile_position.get_neighbor(TilePosition.TileNeighbor.TOP_LEFT), VertexPosition.VertexDir.RIGHT),
+				VertexPosition.new(tile_position.get_neighbor(TilePosition.TileNeighbor.TOP_RIGHT), VertexPosition.VertexDir.LEFT)
+			]
+		EdgeDir.TOP_RIGHT:
+			return [
+				VertexPosition.new(tile_position.get_neighbor(TilePosition.TileNeighbor.TOP_RIGHT), VertexPosition.VertexDir.LEFT),
+				VertexPosition.new(tile_position, VertexPosition.VertexDir.RIGHT)
+			]
+		_:
+			return []

@@ -52,3 +52,36 @@ func get_tile_type(tile_position : TilePosition) -> MapTile.MapTileType:
 
 func get_tile_number(tile_position : TilePosition) -> int:
 	return tiles.get_value(tile_position).number
+
+func get_tile_buildings(tile_position : TilePosition) -> Array[Building]:
+	if building_positions.has(tile_position):
+		return [building_positions.get_value(tile_position)]
+	return []
+	
+func get_vertex_buildings(tile_position : TilePosition) -> Array[Building]:
+	var vertex_buildings : Array[Building] = []
+	for position : VertexPosition in tile_position.get_neighbor_vertices():
+		if building_positions.has(position):
+			vertex_buildings.append(building_positions.get_value(position))
+	return vertex_buildings
+	
+func get_edge_buildings(tile_position : TilePosition) -> Array[Building]:
+	var edge_buildings : Array[Building] = []
+	for position : EdgePosition in tile_position.get_neighbor_edges():
+		if building_positions.has(position):
+			edge_buildings.append(building_positions.get_value(position))
+	return edge_buildings
+	
+func trigger_tile_collection(tile_position : TilePosition) -> void:
+	if not tiles.has(tile_position):
+		return
+	var tile : MapTile = tiles.get_value(tile_position)
+	var resource : int = tile.get_associated_resource()
+	
+	var triggered_buildings : Array[Building] = \
+		get_tile_buildings(tile_position) \
+		+ get_edge_buildings(tile_position) \
+		+ get_vertex_buildings(tile_position)
+	
+	for building : Building in triggered_buildings:
+		building.trigger_collection(resource)

@@ -34,7 +34,10 @@ func erase(key : Variant) -> bool:
 			dictionary[key_hash].erase(dictionary[key_hash][i])
 			return true
 	return false
-	
+
+func has(key : Variant) -> bool:
+	return key in keys()
+
 func keys() -> Array[Variant]:
 	var ckeys : Array[Variant] = []
 	for key_hash in dictionary.keys():

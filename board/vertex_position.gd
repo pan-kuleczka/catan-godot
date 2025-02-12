@@ -43,3 +43,21 @@ func get_neighbor_tiles() -> Array[TilePosition]:
 			]
 		_:
 			return []
+			
+func get_neighbor_edges() -> Array[EdgePosition]:
+	match direction:
+		VertexDir.LEFT:
+			return [
+				EdgePosition.new(tile_position, EdgePosition.EdgeDir.TOP_LEFT),
+				EdgePosition.new(tile_position.get_neighbor(TilePosition.TileNeighbor.BOTTOM_LEFT), EdgePosition.EdgeDir.TOP_RIGHT),
+				EdgePosition.new(tile_position.get_neighbor(TilePosition.TileNeighbor.BOTTOM_LEFT), EdgePosition.EdgeDir.TOP)
+			]
+		VertexDir.RIGHT:
+			return [
+				EdgePosition.new(tile_position, EdgePosition.EdgeDir.TOP_RIGHT),
+				EdgePosition.new(tile_position.get_neighbor(TilePosition.TileNeighbor.BOTTOM_RIGHT), EdgePosition.EdgeDir.TOP_LEFT),
+				EdgePosition.new(tile_position.get_neighbor(TilePosition.TileNeighbor.BOTTOM_RIGHT), EdgePosition.EdgeDir.TOP)
+			]
+		_:
+			return []
+	

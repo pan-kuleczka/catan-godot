@@ -12,3 +12,6 @@ static func get_cost() -> Dictionary:
 
 static func get_prerequisite_building() -> Type:
 	return Type.get_type(Settlement)
+
+static func get_tile_triggered_resources_received_multiplier() -> int:
+	return 2

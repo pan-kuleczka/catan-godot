@@ -26,3 +26,11 @@ static func get_positioning_type() -> BuildingPositioningType:
 
 static func get_prerequisite_building() -> Type:
 	return Type.any_type()
+	
+static func get_tile_triggered_resources_received_multiplier() -> int:
+	return 0
+	
+func trigger_collection(resource : int) -> void:
+	var multiplier : int = get_tile_triggered_resources_received_multiplier()
+	print(self, " collected ", multiplier, " resources of type ", resource)
+	return

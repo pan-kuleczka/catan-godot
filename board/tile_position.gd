@@ -54,6 +54,26 @@ func get_neighbors() -> Array[TilePosition]:
 		neighbors.append(get_neighbor(n))
 	return neighbors
 	
+func get_neighbor_vertices() -> Array[VertexPosition]:
+	return [
+		VertexPosition.new(self, VertexPosition.VertexDir.LEFT),
+		VertexPosition.new(self, VertexPosition.VertexDir.RIGHT),
+		VertexPosition.new(get_neighbor(TileNeighbor.TOP_LEFT), VertexPosition.VertexDir.RIGHT),
+		VertexPosition.new(get_neighbor(TileNeighbor.TOP_RIGHT), VertexPosition.VertexDir.LEFT),
+		VertexPosition.new(get_neighbor(TileNeighbor.BOTTOM_LEFT), VertexPosition.VertexDir.RIGHT),
+		VertexPosition.new(get_neighbor(TileNeighbor.BOTTOM_RIGHT), VertexPosition.VertexDir.LEFT)
+	]
+	
+func get_neighbor_edges() -> Array[EdgePosition]:
+	return [
+		EdgePosition.new(self, EdgePosition.EdgeDir.TOP_LEFT),
+		EdgePosition.new(self, EdgePosition.EdgeDir.TOP),
+		EdgePosition.new(self, EdgePosition.EdgeDir.TOP_RIGHT),
+		EdgePosition.new(get_neighbor(TileNeighbor.BOTTOM_LEFT), EdgePosition.EdgeDir.TOP_RIGHT),
+		EdgePosition.new(get_neighbor(TileNeighbor.BOTTOM), EdgePosition.EdgeDir.TOP),
+		EdgePosition.new(get_neighbor(TileNeighbor.BOTTOM_RIGHT), EdgePosition.EdgeDir.TOP_LEFT)
+	]
+	
 # Interface to interact with the Vector2i	
 var x : int:
 	set(new_value):
