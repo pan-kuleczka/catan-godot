@@ -75,15 +75,15 @@ func _draw_buildings() -> void:
 		Buildings.remove_child(child)
 		
 	# Add all buildings to the scene
-	for position : BoardPosition in map.building_positions.keys():
-		var building : Building = map.building_positions.get_value(position)
+	for building_position : BoardPosition in map.building_positions.keys():
+		var building : Building = map.building_positions.get_value(building_position)
 		var screen_position : Vector2 = Vector2(0, 0)
-		if position is TilePosition:
-			screen_position = tile_position_to_screen_position(position)
-		elif position is VertexPosition:
-			screen_position = vertex_position_to_screen_position(position)
-		elif position is EdgePosition:
-			screen_position = edge_position_to_screen_position(position)
+		if building_position is TilePosition:
+			screen_position = tile_position_to_screen_position(building_position)
+		elif building_position is VertexPosition:
+			screen_position = vertex_position_to_screen_position(building_position)
+		elif building_position is EdgePosition:
+			screen_position = edge_position_to_screen_position(building_position)
 		
 		# Create a new Node for the building
 		var building_node : Node2D = building.get_node()
@@ -95,6 +95,6 @@ func draw_board() -> void:
 	_draw_buildings()
 
 func _on_generate_board_button_pressed() -> void:
-	map.building_positions.set_value(EdgePosition.new(TilePosition.new(randi() % 3, randi() % 3), EdgePosition.EdgeDir.TOP_LEFT), Settlement.new(0))
+	map.building_positions.set_value(VertexPosition.new(TilePosition.new(randi() % 3, randi() % 3)), Settlement.new(0))
 	generate_board()
 	draw_board()

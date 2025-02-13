@@ -13,9 +13,13 @@ var player_color : int
 func _init(_player_color : int) -> void:
 	player_color = _player_color
 
-static func get_node() -> Node2D:
+func get_node() -> Node2D:
 	push_error("The function get_node() has not been overriden in a subclass of Building")
-	return Node.new()
+	var texture : CompressedTexture2D = load("res://assets/buildings/circle.svg")
+	var sprite : Sprite2D = Sprite2D.new()
+	sprite.texture = texture
+	sprite.modulate = PlayerColor.get_rgb(player_color)
+	return sprite
 
 static func get_cost() -> Dictionary:
 	push_error("The function get_cost() has not been overriden in a subclass of Building")

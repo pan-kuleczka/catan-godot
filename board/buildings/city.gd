@@ -13,5 +13,12 @@ static func get_cost() -> Dictionary:
 static func get_prerequisite_building() -> Type:
 	return Type.get_type(Settlement)
 
+func get_node() -> Node2D:
+	var texture : CompressedTexture2D = load("res://assets/buildings/city.svg")
+	var sprite : Sprite2D = Sprite2D.new()
+	sprite.texture = texture
+	sprite.modulate = PlayerColor.get_rgb(player_color)
+	return sprite
+
 static func get_tile_triggered_resources_received_multiplier() -> int:
 	return 2
