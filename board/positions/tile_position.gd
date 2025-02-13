@@ -21,7 +21,7 @@ func _hash() -> int:
 	return hash(position)
 
 func _eq(other : Variant) -> bool:
-	if other.get_class() != self.get_class():
+	if not other is TilePosition:
 		return false
 	return position == other.position
 

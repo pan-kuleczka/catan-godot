@@ -1,4 +1,4 @@
-class_name VertexBuilding
+class_name TileBuilding
 extends Building
 
 func _init(_player_color : int) -> void:

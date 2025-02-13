@@ -7,7 +7,7 @@
    viewBox="0 0 180 180"
    version="1.1"
    id="svg1"
-   sodipodi:docname="city.svg"
+   sodipodi:docname="road.svg"
    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -22,9 +22,9 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="6.2944444"
-     inkscape:cx="89.68226"
-     inkscape:cy="102.39188"
+     inkscape:zoom="4.4508443"
+     inkscape:cx="72.233486"
+     inkscape:cy="87.736162"
      inkscape:window-width="2560"
      inkscape:window-height="1351"
      inkscape:window-x="2391"
@@ -33,13 +33,11 @@
      inkscape:current-layer="svg1" />
   <defs
      id="defs1" />
-  <g
-     id="layer1"
-     style="stroke:#000000;stroke-width:4;stroke-dasharray:none;stroke-opacity:1"
-     transform="matrix(0.5,0,0,0.5,44.769734,44.813512)">
-    <path
-       d="M 61.303709,29.275392 33.045897,69.628907 h 0.0293 v 19.533203 61.5625 H 89.467772 146.9541 V 89.16211 H 89.467772 V 69.673829 l -0.03906,-0.05664 z"
-       style="fill:#f2f2f2;stroke:#000000;stroke-width:4;stroke-dasharray:none;stroke-opacity:1"
-       id="path6" />
-  </g>
+  <rect
+     style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2"
+     id="rect1"
+     width="125.81882"
+     height="22.018293"
+     x="27.090591"
+     y="78.990852" />
 </svg>

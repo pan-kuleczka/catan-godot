@@ -23,7 +23,7 @@ func _hash() -> int:
 	return hash([tile_position, direction])
 
 func _eq(other : Variant) -> bool:
-	if other.get_class() != self.get_class():
+	if not other is VertexPosition:
 		return false
 	return [tile_position, direction] == [other.tile_position, other.direction]
 

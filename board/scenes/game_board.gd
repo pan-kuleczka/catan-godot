@@ -93,8 +93,11 @@ func _draw_buildings() -> void:
 func draw_board() -> void:
 	_draw_tiles()
 	_draw_buildings()
+	
+func add_building(position : BoardPosition, building : Building) -> void:
+	map.building_positions.set_value(position, building)
+	_draw_buildings()
 
 func _on_generate_board_button_pressed() -> void:
-	map.building_positions.set_value(VertexPosition.new(TilePosition.new(randi() % 3, randi() % 3)), Settlement.new(0))
 	generate_board()
 	draw_board()

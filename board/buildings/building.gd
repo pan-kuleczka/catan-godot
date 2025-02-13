@@ -1,13 +1,6 @@
 class_name Building
 extends Resource
 
-enum BuildingPositioningType
-{
-	TILE,
-	VERTEX,
-	EDGE
-}
-
 var player_color : int
 
 func _init(_player_color : int) -> void:
@@ -24,10 +17,6 @@ func get_node() -> Node2D:
 static func get_cost() -> Dictionary:
 	push_error("The function get_cost() has not been overriden in a subclass of Building")
 	return {}
-
-static func get_positioning_type() -> BuildingPositioningType:
-	push_error("The function get_cost() has not been overriden in a subclass of Building")
-	return BuildingPositioningType.TILE
 
 static func get_prerequisite_building() -> Type:
 	return Type.any_type()
