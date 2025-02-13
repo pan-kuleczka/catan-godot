@@ -50,6 +50,16 @@ func edge_position_to_screen_position(edge_position : EdgePosition) -> Vector2:
 		EdgePosition.EdgeDir.TOP_RIGHT:
 			return tile_position + tile_position_to_offset(TilePosition.new(1, 0)) / 2
 	return tile_position
+	
+func edge_position_to_rotation(edge_position : EdgePosition) -> float:
+	match edge_position.direction:
+		EdgePosition.EdgeDir.TOP_LEFT:
+			return -PI/3
+		EdgePosition.EdgeDir.TOP:
+			return 0
+		EdgePosition.EdgeDir.TOP_RIGHT:
+			return +PI/3
+	return 0
 
 func _draw_tiles() -> void:
 	BoardLayer.clear()
@@ -75,19 +85,23 @@ func _draw_buildings() -> void:
 		Buildings.remove_child(child)
 		
 	# Add all buildings to the scene
+	# TODO: Make vertex buildings in front of the roads
 	for building_position : BoardPosition in map.building_positions.keys():
 		var building : Building = map.building_positions.get_value(building_position)
 		var screen_position : Vector2 = Vector2(0, 0)
+		var building_rotation : float = 0
 		if building_position is TilePosition:
 			screen_position = tile_position_to_screen_position(building_position)
 		elif building_position is VertexPosition:
 			screen_position = vertex_position_to_screen_position(building_position)
 		elif building_position is EdgePosition:
 			screen_position = edge_position_to_screen_position(building_position)
+			building_rotation = edge_position_to_rotation(building_position)
 		
 		# Create a new Node for the building
 		var building_node : Node2D = building.get_node()
 		building_node.position = screen_position
+		building_node.rotation = building_rotation
 		Buildings.add_child(building_node)
 
 func draw_board() -> void:

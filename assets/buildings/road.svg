@@ -22,9 +22,9 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="4.4508443"
-     inkscape:cx="72.233486"
-     inkscape:cy="87.736162"
+     inkscape:zoom="6.2944444"
+     inkscape:cx="90"
+     inkscape:cy="90"
      inkscape:window-width="2560"
      inkscape:window-height="1351"
      inkscape:window-x="2391"
@@ -34,10 +34,10 @@
   <defs
      id="defs1" />
   <rect
-     style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2"
+     style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.2"
      id="rect1"
-     width="125.81882"
-     height="22.018293"
-     x="27.090591"
-     y="78.990852" />
+     width="75.491287"
+     height="13.210976"
+     x="52.254356"
+     y="83.394508" />
 </svg>
