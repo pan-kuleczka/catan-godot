@@ -9,4 +9,7 @@ func _ready() -> void:
 	$"GameBoard".add_building(pos.get_neighbor_edges()[1], Road.new(PlayerColor.GREEN))
 	$"GameBoard".add_building(pos.get_neighbor_edges()[2], Road.new(PlayerColor.BLUE))
 	$"GameBoard".add_building(pos.get_neighbor_edges()[3], Road.new(PlayerColor.BROWN))
-	# print($"GameBoard".map.building_positions.keys())
+	$"CardInventory".add_card(Card.new())
+	$"CardInventory".add_card(Card.new())
+	$"CardInventory".add_card(Card.new())
+	$"CardInventory".add_card(Card.new())

@@ -108,8 +108,8 @@ func draw_board() -> void:
 	_draw_tiles()
 	_draw_buildings()
 	
-func add_building(position : BoardPosition, building : Building) -> void:
-	map.building_positions.set_value(position, building)
+func add_building(board_position : BoardPosition, building : Building) -> void:
+	map.building_positions.set_value(board_position, building)
 	_draw_buildings()
 
 func _on_generate_board_button_pressed() -> void:

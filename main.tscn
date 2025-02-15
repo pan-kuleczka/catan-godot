@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdww8yk8r10up"]
+[gd_scene load_steps=4 format=3 uid="uid://cdww8yk8r10up"]
 
 [ext_resource type="PackedScene" uid="uid://b2xco2tpsue3" path="res://board/scenes/game_board.tscn" id="1_7u5hl"]
 [ext_resource type="Script" path="res://main.gd" id="1_e8rmu"]
+[ext_resource type="PackedScene" uid="uid://pjfpax4x6xrs" path="res://cards/scenes/card_inventory_scene.tscn" id="3_pgl8r"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -14,3 +15,9 @@ script = ExtResource("1_e8rmu")
 
 [node name="GameBoard" parent="." instance=ExtResource("1_7u5hl")]
 layout_mode = 1
+
+[node name="CardInventory" parent="." instance=ExtResource("3_pgl8r")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+grow_vertical = 0
