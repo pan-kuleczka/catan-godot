@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bg0vmcso2ghsx"]
+[gd_scene load_steps=3 format=3 uid="uid://bg0vmcso2ghsx"]
 
+[ext_resource type="Script" path="res://cards/scenes/card_scene.gd" id="1_6cry3"]
 [ext_resource type="Texture2D" uid="uid://disruwiytnvhc" path="res://assets/cards/card_base.svg" id="1_n2bly"]
 
 [node name="CardScene" type="Control"]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6cry3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_n2bly")

@@ -10,3 +10,15 @@ enum {
 	COIN,
 	PAPER,
 }
+
+enum e {
+	NONE,
+	LUMBER,
+	BRICK,
+	WOOL,
+	GRAIN,
+	ORE,
+	CLOTH,
+	COIN,
+	PAPER,
+}
