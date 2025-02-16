@@ -18,7 +18,7 @@ layout_mode = 1
 
 [node name="CardInventory" parent="." instance=ExtResource("3_pgl8r")]
 layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.7
-anchor_right = 0.7
+anchors_preset = 12
+anchor_top = 1.0
+offset_top = -361.0
 grow_vertical = 0

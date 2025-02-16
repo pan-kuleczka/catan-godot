@@ -6,7 +6,7 @@ var resource : int
 func _init(_resource : int) -> void:
 	resource = _resource
 
-func get_node() -> Node:
+func get_node() -> CardScene:
 	var card_scene : PackedScene = preload("res://cards/scenes/card_scene.tscn")
 	var texture_path : String = "res://assets/cards/" + GameResource.e.keys()[resource].to_lower() + ".svg"
 	if FileAccess.file_exists(texture_path):
