@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bg0vmcso2ghsx"]
 
-[ext_resource type="Script" path="res://cards/scenes/card_scene.gd" id="1_6cry3"]
+[ext_resource type="Script" uid="uid://bnmjakhplayef" path="res://cards/scenes/card_scene.gd" id="1_6cry3"]
 [ext_resource type="Texture2D" uid="uid://disruwiytnvhc" path="res://assets/cards/card_base.svg" id="1_n2bly"]
 
 [sub_resource type="Animation" id="Animation_uckq3"]
@@ -88,9 +88,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8b22t"]
 _data = {
-"Arrive": SubResource("Animation_uckq3"),
-"Depart": SubResource("Animation_jvmxo"),
-"RESET": SubResource("Animation_sv62r")
+&"Arrive": SubResource("Animation_uckq3"),
+&"Depart": SubResource("Animation_jvmxo"),
+&"RESET": SubResource("Animation_sv62r")
 }
 
 [node name="CardScene" type="Control"]

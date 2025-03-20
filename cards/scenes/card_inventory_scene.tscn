@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://pjfpax4x6xrs"]
 
-[ext_resource type="Script" path="res://cards/scenes/card_inventory_scene.gd" id="1_vsh8c"]
+[ext_resource type="Script" uid="uid://b01ffa28mu1ue" path="res://cards/scenes/card_inventory_scene.gd" id="1_vsh8c"]
 
 [node name="CardInventory" type="Control"]
 layout_mode = 3
